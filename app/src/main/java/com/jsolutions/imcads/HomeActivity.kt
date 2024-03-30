@@ -18,6 +18,12 @@ class HomeActivity : AppCompatActivity() {
         binding.calculateButton.setOnClickListener {
             validateInputData()
         }
+
+        binding.buttonBackToMain.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun sendData() {

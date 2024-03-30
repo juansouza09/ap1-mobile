@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GroupActivity">
+
+    <TextView
+        android:id="@+id/textViewGroupMembers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Integrantes do grupo:\nCaique Miyazaki\nJuan Pablo\nLuiz Melo"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_margin="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+    <ImageView
+        android:id="@+id/buttonBackToMain"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/seta"
+        android:paddingStart="5dp"
+
+        />
+
+
+
+
+</RelativeLayout>
