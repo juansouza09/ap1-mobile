@@ -4,7 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.jsolutions.imcads.data.models.User
 import com.jsolutions.imcads.databinding.ActivityHomeBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
     private val binding by lazy {
@@ -29,6 +33,12 @@ class HomeActivity : AppCompatActivity() {
     private fun sendData() {
         val height = binding.heightEditText.editText?.text.toString().toDouble()
         val weight = binding.weightEditText.editText?.text.toString().toDouble()
+
+        val user = User(height = height, weight = weight)
+
+        GlobalScope.launch(Dispatchers.IO) {
+            App.database.userDao().insert(user)
+        }
 
         // Cálculo do IMC
         val bmi = calculateBMI(weight, height)
